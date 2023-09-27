@@ -1,5 +1,7 @@
 package com.vpinchaudhary.tradetrove;
 
+import com.vpinchaudhary.tradetrove.item.ModCreativeModeTabs;
+import com.vpinchaudhary.tradetrove.item.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -12,6 +14,10 @@ public class TradeTrove
 
     public TradeTrove() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
     }
 
